@@ -1,0 +1,7 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+# routes.yaml
+image_show:
+    path: /image/{imageName}
+    controller: App\Controller\ImageController::show

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title %}New Auction{% endblock %}
+
+{% block content %}
+    <div style="margin-bottom: 220px;"></div> <!-- Add some margin-bottom -->
+    <h1>Create new Auction</h1>
+   
+  
+
+    {{ include('auction/_form.html.twig') }}
+
+    <a href="{{ path('app_auction_index') }}">back to list</a>
+
+    <script>
+        function openFileExplorer() {
+            document.getElementById('fileInput').click();
+        }
+    </script>
+{% endblock %}

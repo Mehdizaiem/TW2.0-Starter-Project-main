@@ -1,0 +1,46 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block title %}Auction{% endblock %}
+
+{% block body %}
+    <h1>Auction</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ auction.id }}</td>
+            </tr>
+            <tr>
+                <th>Auctionname</th>
+                <td>{{ auction.auctionname }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ auction.price }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ auction.date }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{{ auction.time }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ auction.description }}</td>
+            </tr>
+            <tr>
+                <th>Imgpath</th>
+                <td>{{ auction.imgpath }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_auction_front_index') }}">back to list</a>
+
+    <a href="{{ path('app_auction_front_edit', {'id': auction.id}) }}">edit</a>
+
+    {{ include('auction_front/_delete_form.html.twig') }}
+{% endblock %}

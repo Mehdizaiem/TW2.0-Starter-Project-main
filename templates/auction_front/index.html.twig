@@ -1,0 +1,46 @@
+{% extends 'baseFront.html.twig' %}
+
+{% block title %}Auction index{% endblock %}
+
+{% block body %}
+
+
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row">
+            {% for auction in auctions %}
+            <div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
+                <div class="product d-flex flex-column">
+                    <a href="#" class="img-prod">
+                        {% if auction.imgpath is not null %}
+                        {% set imageName = auction.imgpath|split('/')|last %}
+                        <img class="img-fluid" src="{{ path('image_show', {'imageName': imageName}) }}" alt="Auction Image">
+                        {% else %}
+                        No image available
+                        {% endif %}
+                        <div class="overlay"></div>
+                    </a>
+                    <div class="text py-3 pb-4 px-3">
+                        <h3><a href="#">{{ auction.auctionname }}</a></h3>
+                        <p style="font-weight: bold; color: #333; margin-bottom: 5px;">Description:</p>
+                        <p>{{ auction.description }}</p>
+                       
+                        <p style="font-weight: bold; color: #333; margin-bottom: 5px;">Starting Time:  {{ auction.time }}</p>
+        
+                        <div class="pricing">
+                        <p style="font-weight: bold; color: #333; margin-bottom: 5px;">Starting Price:  {{ auction.price }} </p>
+                            <p class="price"><span></span></p>
+                        </div>
+                        <p class="bottom-area d-flex px-3">
+                          <a href="{{ path('app_bidfront_auction', {'idAuction': auction.id}) }}" class="buy-now text-center py-2">Bid now<span><i class="ion-ios-cart ml-1"></i></span></a>
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

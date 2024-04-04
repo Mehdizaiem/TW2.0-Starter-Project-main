@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AuctionHouse</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    {% block stylesheets %}
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/open-iconic-bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/animate.css') }}">
+    
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/owl.carousel.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/owl.theme.default.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/magnific-popup.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/aos.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/ionicons.min.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/bootstrap-datepicker.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/jquery.timepicker.css') }}">
+
+    
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/icomoon.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontTemp/css/style.css') }}">
+    {% endblock %}
+
+
+
+  </head>
+
+
+    {% block navbar %}
+    <body class="goto-here">
+		
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    {#<div class="container">#}
+			<a class="navbar-brand" href="{{ path('app_auction_front_index') }}">
+				<img src="{{asset('frontTemp/images/x.png')}}" alt="Logo Vinci " style="width:100px; height: 50px;">
+			</a>	      
+        	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        	<span class="oi oi-menu"></span> Menu
+	      	</button>
+
+	      	<div class="collapse navbar-collapse" id="ftco-nav"> 
+            {% block active_link %}
+
+	 		<ul class="navbar-nav ml-auto">
+    <li class="nav-item"><a href="{{ asset('frontTemp/index.html') }}" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="{{ asset('frontTemp/events.html') }}" class="nav-link">Events</a></li>
+    <li class="nav-item active"><a href="{{ asset('frontTemp/shop.html') }}" class="nav-link">Shop</a></li>
+    <li class="nav-item" style="font-size: 14px; font-weight: bold;"><a href="{{ asset('frontTemp/courses.html') }}" class="nav-link">Courses & Workshops</a></li>
+    <li class="nav-item"><a href="{{ asset('frontTemp/auction.html') }}" class="nav-link">Auction</a></li>
+    <li class="nav-item"><a href="{{ asset('frontTemp/login.html') }}" class="nav-link">Login</a></li>
+    <li class="nav-item"><a href="{{ asset('frontTemp/contact.html') }}" class="nav-link">Contact</a></li>
+    <li class="nav-item"><a href="{{ asset('frontTemp/about.html') }}" class="nav-link">About</a></li>
+    <li class="nav-item cta cta-colored"><a href="{{ asset('frontTemp/cart.html') }}" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+</ul>
+
+
+              {% endblock %}
+	      </div>
+	    {#</div>#}
+	  </nav>
+    {% endblock %}
+
+
+       
+   <div class="hero-wrap hero-bread" style="background-image: url('{{ asset('frontTemp/images/Auctions1.jpg') }}');"></div> 
+
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <h1 class="mb-0 bread">Auction House</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+ {% block body %}
+    <section class="ftco-section bg-light">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-8 col-lg-10 order-md-last">
+    				<div class="row">
+		    			<div class="col-sm-12 col-md-12 col-lg-4 ftco-animate d-flex">
+		    				<div class="product d-flex flex-column">
+		    					<a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.png" alt="Colorlib Template">
+		    						<div class="overlay"></div>
+		    					</a>
+		    					<div class="text py-3 pb-4 px-3">
+		    						<div class="d-flex">
+		    							<div class="cat">
+				    						<span>Lifestyle</span>
+				    					</div>
+			    					</div>
+		    						<h3><a href="#">Nike Free RN 2019 iD</a></h3>
+		    						<div class="pricing">
+			    						<p class="price"><span>$120.00</span></p>
+			    					</div>
+			    					<p class="bottom-area d-flex px-3">
+		    							<a href="#" class="buy-now text-center py-2">Bid now<span><i class="ion-ios-cart ml-1"></i></span></a>
+		    						</p>
+		    					</div>
+		    				</div>
+		    			</div>
+		    	</div>
+
+		    	
+                 
+    </section>
+
+    {% endblock %}
+
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+{% block js %}
+
+  <script src="{{ asset('frontTemp/js/jquery.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/jquery-migrate-3.0.1.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/popper.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/bootstrap.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/jquery.easing.1.3.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/jquery.waypoints.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/jquery.stellar.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/owl.carousel.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/jquery.magnific-popup.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/aos.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/jquery.animateNumber.min.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/bootstrap-datepicker.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/scrollax.min.js') }}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{{ asset('frontTemp/js/google-map.js') }}"></script>
+  <script src="{{ asset('frontTemp/js/main.js') }}"></script>
+    {% endblock %}
+
+  </body>
+</html>

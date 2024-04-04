@@ -1,0 +1,125 @@
+{% block stylesheets %}
+    <style>
+        /* Custom CSS for Auction Info page */
+        .auction-info-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .auction-info-container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .auction-info-table th {
+            width: 30%;
+        }
+
+        .auction-info-image {
+            max-width: 200px;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .btn-group {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .btn {
+            margin-right: 10px;
+        }
+
+        /* Custom CSS for text */
+        .auction-info-text {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Custom CSS for links */
+        .auction-info-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .auction-info-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Custom CSS for lines */
+        .auction-info-line {
+            border-top: 1px solid #dee2e6;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="auction-info-container">
+            <h1>Auction Info</h1>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <p class="auction-info-text">Here is the detailed information about the auction:</p>
+
+                    <table class="table table-striped auction-info-table">
+                        <tbody>
+                            <tr>
+                                <th>Id</th>
+                                <td>{{ auction.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>Auction Name</th>
+                                <td>{{ auction.auctionname }}</td>
+                            </tr>
+                            <tr>
+                                <th>Price</th>
+                                <td>{{ auction.price }}</td>
+                            </tr>
+                            <tr>
+                                <th>Date</th>
+                                <td>{{ auction.date }}</td>
+                            </tr>
+                            <tr>
+                                <th>Time</th>
+                                <td>{{ auction.time }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description</th>
+                                <td>{{ auction.description }}</td>
+                            </tr>
+                            <tr>
+                                <th>Image</th>
+                                <td>
+                                    {% if auction.imgpath is not null %}
+                                        {% set imageName = auction.imgpath|split('/')|last %}
+                                        <img src="{{ path('image_show', {'imageName': imageName}) }}" alt="Auction Image" class="auction-info-image">
+                                    {% else %}
+                                        No image available
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="auction-info-line"></div>
+
+                    <div class="btn-group">
+                        <a href="{{ path('app_auction_index') }}" class="btn btn-secondary auction-info-link">Back to List</a>
+                        <a href="{{ path('app_auction_edit', {'id': auction.id}) }}" class="btn btn-primary auction-info-link">Edit</a>
+                        {{ include('auction/_delete_form.html.twig') }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
